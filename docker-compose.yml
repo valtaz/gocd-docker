@@ -1,0 +1,11 @@
+gocdserver:
+  build: .
+  dockerfile: Dockerfile.gocd-server.16.6.0
+  ports:
+    - "8153:8153"
+
+gocdagent1:
+  build: .
+  dockerfile: Dockerfile.gocd-agent.16.6.0
+  links:
+    - gocdserver:go-server
