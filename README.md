@@ -1,3 +1,21 @@
+Fork from the main repo to add docker-compose just for a basic setting for demo/test GoCD
+
+If you don't have docker already, install from
+https://docs.docker.com/docker-for-mac/
+
+
+```
+git clone https://github.com/valtaz/gocd-docker.git
+cd gode-docker
+docker-compose build
+docker-compose up
+```
+
+You can access the Go site via http://localhost:8153/go/pipelines
+
+----------------------------------------------------------------------
+
+
 This is the repository which contains the Dockerfiles and supporting scripts for:
 
 https://registry.hub.docker.com/u/gocd/gocd-dev/
