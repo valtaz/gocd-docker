@@ -22,4 +22,16 @@ RUN sed -i -e 's/DAEMON=Y/DAEMON=N/' /etc/default/go-agent
 RUN apt-get clean 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+#Install Ansible
+RUN apt-get install -y software-properties-common
+RUN apt-add-repository ppa:ansible/ansible
+RUN apt-get update -y
+RUN apt-get install -y -q ansible
+
+#Install AWS Cli
+RUN curl 'https://s3.amazonaws.com/aws-cli/awscli-bundle.zip' -o '/tmp/awscli-bundle.zip'
+RUN unzip /tmp/awscli-bundle.zip -d /tmp
+RUN /tmp/awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+RUN ln -s /usr/local/aws/bin/aws /usr/bin/aws
+
 CMD ["/sbin/my_init"]
