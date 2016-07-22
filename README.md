@@ -6,7 +6,7 @@ https://docs.docker.com/docker-for-mac/
 
 ```
 git clone https://github.com/valtaz/gocd-docker.git
-cd gode-docker
+cd gocd-docker
 docker-compose build
 docker-compose up
 ```
